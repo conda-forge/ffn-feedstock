@@ -1,5 +1,5 @@
 {% set name = "ffn" %}
-{% set version = "0.3.6" %}
+{% set version = "0.3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4a79e72e06ff328e333ffe97010b1ce110bcd694fcd03be7351bf5065cd273e8 
+  sha256: 58b0056e680f4291ab61c6f55809f2d21a339f5c4ec48bba2ecee32f20bbd09e
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -28,6 +28,7 @@ requirements:
     - scikit-learn >=0.15
     - scipy >=0.15
     - tabulate >=0.7.5
+    - yfinance >=0.2
     - python >=3.6
 
 test:
@@ -43,7 +44,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'ffn - a financial function library for Python'
+  summary: ffn - a financial function library for Python
   description: |
     ffn - a financial function library for Python
   doc_url: http://pmorissette.github.io/ffn/
