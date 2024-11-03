@@ -18,6 +18,7 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - setuptools
   run:
     - decorator >=5.0.7
     - future >=0.15
