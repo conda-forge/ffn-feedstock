@@ -6,17 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: adf2d6b17594628034ca85dc0b1d77e2346dba2835bdeb27cf73763b58183ae5
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
@@ -29,13 +29,14 @@ requirements:
     - scipy >=0.15
     - tabulate >=0.7.5
     - yfinance >=0.2
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
     - ffn
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
