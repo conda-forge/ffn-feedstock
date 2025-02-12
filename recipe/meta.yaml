@@ -1,5 +1,5 @@
 {% set name = "ffn" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: adf2d6b17594628034ca85dc0b1d77e2346dba2835bdeb27cf73763b58183ae5
+  sha256: 23628944a7cb048129b5f1abceef0777faa43307601c095dbcdcb7bc5c19d514
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
