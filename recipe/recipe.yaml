@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: ffn
-  version: "1.4.0"
+  version: "1.4.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 75644045790d3b76d9a50efcc15728f8110598155e3ac1be8f0274688074b67c
+  sha256: 470c02fcd8be8a148b8033e9b80fb10ddd8e2102b18b94135c04492e6319779a
 
 build:
   number: 0
